@@ -1,20 +1,19 @@
-bignum = 600851475143
-#bignum = 13195
-working = bignum
-primefactors = []
-factor = 1
-largest = 1
-while factor < working: 
-    if bignum % factor == 0:
-        largest = factor
-        print 'Found factor: %s' % (largest)
-        
-        if factor not in primefactors:
-            primefactors.append( factor )
+def is_prime( bignum ):
+  factor = 2
+  while factor * factor < bignum:
+      if bignum % factor == 0:
+          return False
 
+
+bignum = 600851475143
+#bignum = 13195d
+primefactors = []
+factor = 2
+while factor * factor < bignum: 
+    if is_prime(factor):
+      if bignum % factor == 0:
+        primefactors.append( factor )
         
-        #working = bignum / factor
-        #print 'working now: %s' % (working)
     factor += 1
 
 print primefactors 
